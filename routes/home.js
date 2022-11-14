@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const mongoose = require('mongoose')
 const { loginrequired } = require('../config/JWT')
 const User = require('../models/userModel')
 const jwt = require('jsonwebtoken')
