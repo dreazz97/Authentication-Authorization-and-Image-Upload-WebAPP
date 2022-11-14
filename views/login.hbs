@@ -17,16 +17,25 @@
     <div class="container">
         <h1>Login</h1>
 
-        
         <form method="post">
             <h4>Email</h4>
             <input type="text" name="email">
             <h4>Password</h4>
             <input type="password" name="password"><br>
-            <input type="submit">
+            <input id="submit_login" type="submit">
+            <p id="error_message"></p>
             <h2>Don't have an account? Register Here</h2>
             <a href="/user/register">Register</a>
         </form>
+        <script>
+            var errormessage = document.querySelector('#error_message');
+            const myKeysValues = window.location.search;
+            if (myKeysValues == '?Invalid%20email%20or%20password'){
+                errormessage.innerHTML = "Invalid email or password"
+            }else if (myKeysValues == '?User%20not%20registered'){
+                errormessage.innerHTML = "User not registered"
+            }
+        </script>
     </div>
 </body>
 </html>

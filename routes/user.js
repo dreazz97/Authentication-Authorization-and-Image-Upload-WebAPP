@@ -65,6 +65,8 @@ router.post('/register', (req, res)=>{
         if (!name || !email || !password || !password2) {
             errors.push({ msg : "All fields are required" })
             console.log('All fields are required')
+            res.redirect('/user/register?' + 'All fields are required')
+            return
         }
         //email validation
         var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -72,16 +74,22 @@ router.post('/register', (req, res)=>{
         if(!email.match(validRegex)){
             errors.push({ message: 'Invalid Email' })
             console.log('Invalid email')
+            res.redirect('/user/register?' + 'Invalid email')
+            return
         }
         //password length
         if (password.length < 6) {
             errors.push({ msg: "Password len must be min 6" })
             console.log('Password len must be min 6')
+            res.redirect('/user/register?' + 'Password length must be at least 6 characters')
+            return
         }
         //match password
         if(password !== password2) {
             errors.push({ msg: "Password doesn't match" })
             console.log("Password doesn't match")
+            res.redirect('/user/register?' + 'Password doesnt match')
+            return
         }
         if (errors.length > 0){
             res.render('register', {
@@ -99,7 +107,7 @@ router.post('/register', (req, res)=>{
                 if (user) {
                 errors.push({ msg: "User already exists" })
                 console.log("User already exists")
-                res.render('register')
+                res.redirect('/user/register?' + 'User already exists')
                 }
                 else {
                     //create new user
@@ -232,6 +240,7 @@ router.post('/login', verifyEmail, async (req, res)=> {
     try {
         const { email, password } = req.body
         const findUser = await User.findOne( { email : email })
+        
         if (findUser){
             const match = await bcrypt.compare(password, findUser.password)
             if(match){
@@ -244,12 +253,10 @@ router.post('/login', verifyEmail, async (req, res)=> {
             }
             else {
                 console.log('Invalid Password')
-                res.redirect('/user/login')
+                res.redirect('/user/login?' + 'Invalid email or password')
             }
-        }
-        else 
-        {
-            console.log('User not registered')
+        }else {
+            //console.log('User not registered');
         }
     }
     catch (err) {

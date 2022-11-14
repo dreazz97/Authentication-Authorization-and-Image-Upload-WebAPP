@@ -52,7 +52,8 @@ const verifyEmail = async (req, res, next)=>{
         else 
         {
             console.log('User not registered')
-            res.redirect('/user/login')
+            res.redirect('/user/login?' + 'User not registered')
+
         }
     }
 }
