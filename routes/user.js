@@ -175,7 +175,7 @@ router.get('/verify-email', async(req, res)=>{
             user.isVerified = true
             await user.save()
             console.log('The account was verified')
-            res.redirect('/user/login')
+            res.render('verified')
         }
         else {
             res.redirect('/user/register')
@@ -240,7 +240,7 @@ router.post('/login', verifyEmail, async (req, res)=> {
     try {
         const { email, password } = req.body
         const findUser = await User.findOne( { email : email })
-        
+
         if (findUser){
             const match = await bcrypt.compare(password, findUser.password)
             if(match){
