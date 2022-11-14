@@ -147,7 +147,7 @@ router.post('/register', (req, res)=>{
                             }
                         })
 
-                            res.redirect('/user/login')
+                            res.render('emailsent')
                          })
                          .catch(err=>{
                             if(err) {
