@@ -16,6 +16,6 @@ module.exports = {
 
 Create a .env file with the following data:
 MONGODB_URL = MongoDB URL here
-JWT_SECRET = JWT Secret Code to generate a JWT Token
+JWT_SECRET = JWT Secret Code to generate a JWT Token (random string)
 
 This project takes in authentication with JWT and email verification, and lets the user upload images to their profile.
