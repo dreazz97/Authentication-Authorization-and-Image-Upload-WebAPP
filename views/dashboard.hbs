@@ -5,18 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/views/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/views/dashboard.css">
 </head>
 <body>
-    <h1>WELCOME TO DASHBOARD {{user}}</h1>
-    You have successfully logged In
+    <div class="container">
+        <div class="row justify-content-center r1">
+            <div class="col-6 d-flex text-center justify-content-start">
+                <img class="avatar" src="/views/images/gorila_avatar.png" alt="">
+                <h1 class="position-banner">WELCOME {{user}}</h1>
+            </div>
+            <div class="col-6 d-flex justify-content-end">
+                <h2 class="position-banner"><a href="/user/logout">Logout</a></h2>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-5 text-center cf">
+                <form id="form_upload" method="POST" action="/user/upload" enctype="multipart/form-data">
+                <input class="form-control" type="file" value="c:/passwords.txt" id="myFile" name="image">
+                    <div class="row justify-content-center">
+                        <div class="col-md-6 col-lg-4 text-center">
+                            <input class="form-control sb" type="submit">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-6 col-lg-4 ci">
 
-        <form id="form_upload" method="POST" action="/user/upload" enctype="multipart/form-data">
-        <input type="file" id="myFile" name="image">
-        <input type="submit">
-      </form>
+            </div>
+        </div>
+    </div>
 
     <script src="/views/index.js"></script>
-    <h2><a href="/user/logout">Logout</a></h2>
 </body>
 </html>

@@ -1,0 +1,43 @@
+body {
+    background-color: #A9CEF4;
+    font-family: Poppins;
+}
+
+a {
+    text-decoration: none;
+    color: #36494E;
+}
+
+a:hover {
+    color: #7EA0B7;
+}
+
+.cont {
+    margin-top: 10%;
+}
+
+#gorila_avatar {
+    width: 200px;
+}
+
+.avatar {
+    width: 40px;
+    margin-right: 20px;
+}
+
+.r1 {
+    margin-top: 30px;
+}
+
+.social {
+    width: 50px;
+    margin-right: 30px;
+}
+
+.linkedin:hover {
+    cursor: pointer;
+}
+
+.github:hover {
+    cursor: pointer;
+}

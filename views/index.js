@@ -19,7 +19,7 @@ function displayimages(){
     image_new_element[i] = document.createElement("img");
     image_new_element[i].classList.add('images_style');
     image_new_element[i].src = image[i];
-    var button_submit_location = document.querySelector('#form_upload');
-    button_submit_location.after(image_new_element[i]);
+    var button_submit_location = document.querySelector('.ci');
+    button_submit_location.appendChild(image_new_element[i]);
     }
 }
