@@ -15,8 +15,8 @@ module.exports = {
 }
 
 Create a .env file with the following data:
-MONGODB_URL = <MongoDB URL here>
-JWT_SECRET = <JWT Secret Code to generate a JWT Token>
+MONGODB_URL = MongoDB URL here
+JWT_SECRET = JWT Secret Code to generate a JWT Token
 
 
 This Project does the following:
