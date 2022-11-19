@@ -1,6 +1,6 @@
 # Authentication-and-Image-Upload-Perfil
 
-Dependencies and Technologies: Multer, Node.js, Express, MongoDB
+Dependencies and Technologies: Multer, Node.js, Express, MongoDB, Nodemailer for Email-verification, JWT, bcrypt, crypto.
 
 
 Before Using:
