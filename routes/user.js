@@ -153,8 +153,8 @@ router.post('/register', (req, res)=>{
                         var mailOptions = {
                             from: ' "Verify your email" <iuripeniche@hotmail.com>',
                             to: user.email,
-                            subject: 'iuripeniche - verify your email',
-                            html: `<h2> ${user.name}! Thanks for registering on our site </h2>
+                            subject: 'Profile APP - Please Verify your Email',
+                            html: `<h2> ${user.name}, Thanks for registering in our site </h2>
                                    <h4> Please verify your email to continue</h4>
                                    <a href="http://${req.headers.host}/user/verify-email?token=${user.emailToken}">Verify Your Email</a>`
                         }
