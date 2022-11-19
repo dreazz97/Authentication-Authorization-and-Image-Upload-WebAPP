@@ -23,3 +23,13 @@ function displayimages(){
     button_submit_location.appendChild(image_new_element[i]);
     }
 }
+
+var errormessage = document.querySelector('#error_message');
+    const myKeysValues = window.location.search;
+    if (myKeysValues == '?Error:%20Images%20Only!'){
+        errormessage.innerHTML = "Images only"
+    }else if (myKeysValues == '?MulterError:%20File%20too%20large'){
+        errormessage.innerHTML = "Image is too large"
+    }else if(myKeysValues == '?Please%20select%20an%20image'){
+        errormessage.innerHTML = "Please insert an image"
+    }

@@ -21,7 +21,29 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer({storage: storage})
+const upload = multer({
+    storage: storage,
+    limits:{fileSize: 1000000}, //limits to 1mb
+    fileFilter: function(req, file, cb){
+        checkFileType(file, cb);
+    }
+}).single("image");
+
+
+//Check file type
+function checkFileType(file, cb) {
+    //check extension
+    var ext = path.extname(file.originalname);
+    //Check mime
+    //const mimetype = filetypes.test(file.mimetype);
+
+    if (ext == '.png' || ext == '.jpg' || ext == '.gif' || ext == '.jpeg') {
+        return cb(null, true);
+    }
+    else {
+        cb('Error: Images Only!');
+    }
+}
 
 router.get('/register', (req, res)=>{
     try {
@@ -209,16 +231,26 @@ router.get('/login', async(req, res)=>{
     }
 })
 
-router.post('/upload', loginrequired, upload.single("image"), (req, res)=>{
+router.post('/upload', loginrequired, (req, res)=>{
     const userId = req.userId
-    const image = req.file.filename;
-
-    const newimage = new ImageURL({
-        imagename: 'images/' + image,
-        assignedTo: userId
+    upload(req, res, (err) => {
+      if(err){
+        res.redirect('/dashboard?' + err)
+        console.log(err)
+      } else {
+        if (req.file == undefined) {
+            res.redirect('/dashboard?' + "Please select an image")
+        } else {
+        const image = req.file.filename;
+        const newimage = new ImageURL({
+            imagename: 'images/' + image,
+            assignedTo: userId
+        })
+        newimage.save();
+        res.redirect('/dashboard?' + "File uploaded")
+        }
+      }
     })
-    newimage.save();
-    res.redirect('/dashboard')
 })
 
 router.get('/upload', loginrequired, (req, res)=>{
