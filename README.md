@@ -18,7 +18,4 @@ Create a .env file with the following data:
 MONGODB_URL = MongoDB URL here
 JWT_SECRET = JWT Secret Code to generate a JWT Token
 
-
-This Project does the following:
-
-Project that takes in authentication with JWT and email verification, lets the user upload images to their profile.
+This project takes in authentication with JWT and email verification, and lets the user upload images to their profile.
