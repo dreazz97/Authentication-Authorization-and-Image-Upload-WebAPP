@@ -15,6 +15,10 @@ module.exports = {
     pass: "password"
 }
 ```
+Then insert the required config in the user.js file:
+```javascript
+const SMTP_CONFIG = require('../config/smtp')
+```
 
 Create a .env file with the following data:
 ```env
