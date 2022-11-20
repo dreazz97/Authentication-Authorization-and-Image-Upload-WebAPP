@@ -1,7 +1,7 @@
 # Authentication-and-Image-Upload-Web-APP
 
 ### Dependencies and Technologies Used:
-* Front-end: Handlebars, CSS3, Javascript, Bootstrap.
+* Front-end: HTML5, Handlebars, CSS3, Javascript, Bootstrap.
 * Back-end:
 ```json
   "dependencies": {
