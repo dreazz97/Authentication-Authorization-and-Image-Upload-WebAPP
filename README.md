@@ -1,7 +1,7 @@
 # Authentication-and-Image-Upload-Web-APP
 
 ### Dependencies and Technologies Used:
-Bootstrap, Multer, Node.js, Express, MongoDB, Mongoose, Nodemailer for Email-verification, JWT, bcrypt, crypto.
+HTML5, CSS3, Javascript, Bootstrap, Node.js with express, Multer, MongoDB, Mongoose, Nodemailer for Email-verification, JWT, bcrypt, crypto.
 
 
 ### Before Using:
