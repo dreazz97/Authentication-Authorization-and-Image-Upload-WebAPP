@@ -2,7 +2,7 @@
 
 ### Dependencies and Technologies Used:
 * Front-end: HTML5, Handlebars, CSS3, Javascript, Bootstrap.
-* Back-end:
+* Back-end: Node js with Express and the following dependencies:
 ```json
   "dependencies": {
     "bcrypt": "^5.1.0",
