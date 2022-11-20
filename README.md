@@ -7,7 +7,7 @@ HTML5, CSS3, Javascript, Bootstrap, Node.js with express, Multer, MongoDB, Mongo
 ### Before Using:
 You have to set-up a stmp.js file to connect with the nodemailer transporter, steps bellow:
 
-Create smtp.js file in config folder and add the followed lines of code:
+Create smtp.js file in the config folder and add the followed lines of code:
 
 ```javascript
 module.exports = {
