@@ -24,7 +24,7 @@
 
 
 ### Before Using:
-You have to set-up a stmp.js file to connect with the nodemailer transporter, steps bellow:
+You have to set-up a stmp.js file to connect with the nodemailer transporter, steps below:
 
 Create smtp.js file in the config folder and add the followed lines of code:
 
