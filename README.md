@@ -1,6 +1,6 @@
 # Authentication-and-Image-Upload-Profile
 
-### Dependencies and Technologies:
+### Dependencies and Technologies Used:
 Bootstrap, Multer, Node.js, Express, MongoDB, Mongoose, Nodemailer for Email-verification, JWT, bcrypt, crypto.
 
 
