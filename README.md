@@ -4,7 +4,7 @@
 Bootstrap, Multer, Node.js, Express, MongoDB, Mongoose, Nodemailer for Email-verification, JWT, bcrypt, crypto.
 
 
-###Before Using:
+### Before Using:
 You have to set-up a stmp.js file to connect with the nodemailer transporter, steps bellow:
 
 Create smtp.js file in config folder and add the followed lines of code:
