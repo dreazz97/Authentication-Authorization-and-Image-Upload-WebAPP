@@ -2,7 +2,7 @@
 
 ### Dependencies and Technologies Used:
 Front-end: Handlebars, CSS3, Javascript, Bootstrap.
-Back-end:
+*.c Back-end:
 ```json
   "dependencies": {
     "bcrypt": "^5.1.0",
