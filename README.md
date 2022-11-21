@@ -45,7 +45,7 @@ MONGODB_URL = <MongoDB URL here>
 JWT_SECRET = <JWT Secret Code to generate a JWT Token (random string)>
 ```
 ### What I learned:
-- Authentication with JWT and email verification;
+- Authentication and Authorization with JWT and Email Verification;
 - REST API / Routing;
 - Image uploading from client to back-end server and storage of the image location to the DB (MongoDB);
 - Usage of NoSQL Database (MongoDB)
