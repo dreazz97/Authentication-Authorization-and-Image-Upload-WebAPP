@@ -47,6 +47,10 @@ Create a .env file with the following data:
 MONGODB_URL = <MongoDB URL here>
 JWT_SECRET = <JWT Secret Code to generate a JWT Token (random string)>
 ```
+
+### To Start the Demo:
+nodemon server.js -e js,json,hbs
+
 ### What I learned:
 - Authentication and Authorization with JWT and Email Verification;
 - REST API / Routing;
