@@ -1,5 +1,8 @@
 # Authentication-and-Image-Upload-Web-APP
 
+### Web APP functionality:
+This Web APP lets the user create an account and upload images to their profile.
+
 ### Dependencies and Technologies Used:
 * Front-end: HTML5, Handlebars, CSS3, Javascript, Bootstrap.
 * Back-end: Node js with Express and the following dependencies:
