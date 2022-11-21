@@ -48,4 +48,4 @@ JWT_SECRET = <JWT Secret Code to generate a JWT Token (random string)>
 - Authentication with JWT and email verification;
 - REST API / Routing;
 - Image uploading from client to back-end server and storage of the image location to the DB (MongoDB);
-- NoSQL Database
+- Usage of NoSQL Database (MongoDB)
