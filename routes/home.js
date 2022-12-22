@@ -1,28 +1,14 @@
 const express = require('express')
 const router = express.Router()
-const { loginrequired } = require('../config/JWT')
+const { loginrequired, isloggedin } = require('../config/JWT')
 const User = require('../models/userModel')
-const jwt = require('jsonwebtoken')
 
-router.get('/', (req, res)=>{
-    try {
-        const token = req.cookies["access-token"]
-        if (token){
-            //verifies the token
-        const validateToken = jwt.verify(token, process.env.JWT_SECRET)
-        if(validateToken) {
-            res.redirect('/dashboard')
-        }
-        else {
+router.get('/', isloggedin, (req, res)=>{
+    const userId = req.userId
+        if (!userId){
             res.render('index')
-          }  
+            console.log('redirected to index from /')
         }
-        else {
-        res.render('index')
-        }
-    } catch (err) {
-        console.log(err)
-    }
 })
 
 router.get('/dashboard', loginrequired, (req, res)=>{

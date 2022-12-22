@@ -8,8 +8,7 @@ const jwt = require('jsonwebtoken')
 const nodemailer = require('nodemailer')
 const SMTP_CONFIG = require('../config/smtp')
 const path = require('path')
-const { verifyEmail } = require('../config/JWT')
-const { loginrequired } = require('../config/JWT')
+const { verifyEmail, loginrequired, isloggedin } = require('../config/JWT')
 
 const multer = require('multer')
 const storage = multer.diskStorage({
@@ -45,26 +44,11 @@ function checkFileType(file, cb) {
     }
 }
 
-router.get('/register', (req, res)=>{
-    try {
-        const token = req.cookies["access-token"]
-        if (token){
-            //verifies the token
-        const validateToken = jwt.verify(token, process.env.JWT_SECRET)
-        if(validateToken) {
-            res.redirect('/dashboard')
-        }
-        else {
+router.get('/register', isloggedin, (req, res)=>{
+    const userId = req.userId
+        if (!userId){
             res.render('register')
-            console.log(process.env.EMAIL_PASSWORD);
-          }  
         }
-        else {
-        res.render('register')
-        }
-    } catch (err) {
-        console.log(err)
-    }
 })
 
 //mail sender details
@@ -210,25 +194,11 @@ router.get('/verify-email', async(req, res)=>{
 
 
 
-router.get('/login', async(req, res)=>{
-    try {
-        const token = req.cookies["access-token"]
-        if (token){
-            //verifies the token
-        const validateToken = jwt.verify(token, process.env.JWT_SECRET)
-        if(validateToken) {
-            res.redirect('/dashboard')
-        }
-        else {
+router.get('/login', isloggedin, async(req, res)=>{
+    const userId = req.userId
+        if (!userId){
             res.render('login')
-          }  
         }
-        else {
-        res.render('login')
-        }
-    } catch (err) {
-        console.log(err)
-    }
 })
 
 router.post('/upload', loginrequired, (req, res)=>{

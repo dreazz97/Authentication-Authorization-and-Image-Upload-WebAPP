@@ -25,6 +25,26 @@ const loginrequired = (req, res, next)=>{
     }
 }
 
+const isloggedin = (req, res, next)=>{
+        //grab the token of the user
+        const token = req.cookies["access-token"]
+        //Checks if the token exists
+        if(token){
+            //verifies the token
+            const validateToken = jwt.verify(token, process.env.JWT_SECRET)
+            if(validateToken) {
+                res.redirect('/dashboard')
+                console.log('redirected to dashboard from middleware')
+            }
+            else {
+                next()
+            }
+        }
+        else {
+            next()
+        }
+} 
+
 const verifyEmail = async (req, res, next)=>{
     try {
         const user = await User.findOne({ email : req.body.email })
@@ -58,4 +78,4 @@ const verifyEmail = async (req, res, next)=>{
     }
 }
 
-module.exports =  {loginrequired, verifyEmail}
+module.exports =  {loginrequired, verifyEmail, isloggedin}
